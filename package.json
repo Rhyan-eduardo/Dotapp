@@ -1,0 +1,15 @@
+{
+  "name": "dotapp",
+  "version": "1.0.0",
+  "description": "software management",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Uno Network Offices inc.",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^16.0.5"
+  }
+}

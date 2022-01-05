@@ -1,0 +1,754 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  overflow: hidden;
+}
+
+#ToolBar {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 50px;
+  background: #0081C5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#LogoBox {
+  position: absolute;
+  left: 0px;
+  width: 120px;
+  background: white;
+  height: 35px;
+  border-radius: 0px 50px 50px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#LogoBox input {
+  display: none;
+}
+
+.AppLogo {
+  position: absolute;
+  width: 80px;
+}
+
+#SideMenuShow {
+  position: absolute;
+  left: 3px;
+  width: 7px;
+  margin: 3px;
+}
+#SideMenuShow:hover {
+  cursor: pointer;
+}
+
+#MainView {
+  position: absolute;
+  left: 0px;
+  top: 50px;
+  width: 100%;
+  height: 511px;
+  display: grid;
+  grid-template-columns: 22% 100fr;
+  box-sizing: border-box;
+}
+
+#ConfigButtonBox {
+  position: absolute;
+  right: 3px;
+  width: auto;
+  height: 35px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+}
+#ConfigButtonBox button.buttonActive1:nth-of-type(1) {
+  background: none;
+  border: 2px solid white;
+}
+#ConfigButtonBox button.buttonActive:nth-of-type(2) {
+  background: none;
+  border: 2px solid white;
+}
+#ConfigButtonBox button.buttonActive:nth-of-type(3) {
+  background: none;
+  border: 2px solid white;
+}
+#ConfigButtonBox button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 50%;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ConfigButtonBox button img {
+  position: absolute;
+  width: 13px;
+}
+#ConfigButtonBox button:hover {
+  cursor: pointer;
+  background: #f2f2f2;
+}
+
+#NotifyBox {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 220px;
+  height: 290px;
+  border: 2px solid #0081C5;
+  background: white;
+  margin: 0px;
+  padding: 0px;
+  z-index: 1100;
+  display: none;
+}
+#NotifyBox ul {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: 1000;
+}
+#NotifyBox ul::-webkit-scrollbar {
+  background: none;
+  width: 10px;
+  left: -5px;
+}
+#NotifyBox ul::-webkit-scrollbar-thumb {
+  background: #166D9C;
+  opacity: 50%;
+  width: 10px;
+}
+#NotifyBox ul::-webkit-scrollbar-track {
+  background: #DBE6EC;
+}
+#NotifyBox ul li {
+  position: relative;
+  width: 100%;
+  height: auto;
+  list-style-type: none;
+  margin-bottom: 3px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+#NotifyDescription {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: #F1F1F1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#NotifyDescription:hover {
+  background: #eeeeee;
+  cursor: pointer;
+}
+
+#AppThumb {
+  position: absolute;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  border: 1px dashed #166D9C;
+  border-radius: 50%;
+}
+
+#AppName {
+  position: absolute;
+  left: 60px;
+  top: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: black;
+}
+#AppName:hover {
+  text-decoration: underline;
+}
+
+#appDescr {
+  position: absolute;
+  left: 60px;
+  top: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 10px;
+  font-weight: initial;
+  color: black;
+}
+
+#CloseNotify {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 15px;
+  cursor: default;
+}
+
+#NotifyContext {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background: #EAEAEA;
+}
+#NotifyContext p {
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 10px;
+  font-weight: initial;
+  color: black;
+}
+
+#DragBar {
+  position: absolute;
+  width: 102%;
+  height: 15px;
+  background: #0081C5;
+  left: -2px;
+  bottom: -15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#DragBar img {
+  position: absolute;
+  width: 10px;
+  z-index: 1010;
+}
+#DragBar img:hover {
+  cursor: n-resize;
+  background: #0076B5;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 2px;
+}
+
+#SideBar {
+  background: #006EA8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ContentView {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 65% 100fr;
+}
+
+#MediaView {
+  background: white;
+}
+
+#TerminalView {
+  background: #006299;
+}
+
+#TerminalTitleBar {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  top: 0px;
+  left: 0px;
+  background: #037DBD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#TerminalTitleBar span {
+  position: absolute;
+  width: auto;
+  left: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 10px;
+  font-weight: initial;
+  color: white;
+  background: #037DBD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#TerminalTitleBar span:hover {
+  cursor: pointer;
+  background: #0076B5;
+}
+
+#DragDownTerminal {
+  position: absolute;
+  width: 10px;
+  padding: 5px;
+}
+#DragDownTerminal:hover {
+  cursor: n-resize;
+  border: 1px solid white;
+  padding: 3px;
+}
+
+#TerminalModeButton {
+  position: relative;
+  width: 12px;
+  margin-left: 5px;
+}
+#TerminalModeButton:hover {
+  cursor: pointer;
+  padding: 3px;
+  background: #0076B5;
+}
+
+#ProjectsView {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  overflow: hidden;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+#ProjectsView::-webkit-scrollbar {
+  background: none;
+  width: 10px;
+  left: -5px;
+}
+#ProjectsView::-webkit-scrollbar-thumb {
+  background: #166D9C;
+  opacity: 50%;
+  width: 10px;
+}
+#ProjectsView::-webkit-scrollbar-track {
+  background: #DBE6EC;
+}
+
+#FolderBox {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border: 1px solid white;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+#FolderBox.SelectedFolder {
+  background: rebeccapurple;
+}
+#FolderBox:hover {
+  cursor: pointer;
+  background: #EDF6FB;
+  border: 1px solid #00B2FF;
+}
+
+#FolderLabelBox {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: arial;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+#FolderIcon {
+  position: absolute;
+  width: 90px;
+  top: 20px;
+}
+
+#FolderMask {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 10;
+  left: 29px;
+  top: 11px;
+  border-radius: 0px 0px 7px 0px;
+  overflow: hidden;
+}
+#FolderMask img {
+  position: absolute;
+  width: 70px;
+  bottom: -10px;
+  right: -13px;
+}
+
+#UpdateContent {
+  position: absolute;
+  bottom: 10px;
+  width: 190px;
+  height: 30px;
+  outline: none;
+  border: none;
+  background: white;
+  font-family: arial;
+  font-size: 12px;
+  font-weight: initial;
+  color: #0076B5;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#UpdateContent img {
+  position: relative;
+  width: 10px;
+  margin-left: 5px;
+}
+#UpdateContent:active {
+  bottom: 9px;
+}
+#UpdateContent:hover {
+  cursor: pointer;
+  background: #f2f2f2;
+}
+
+#ContextMenu {
+  position: absolute;
+  width: 170px;
+  height: 250px;
+  background: #F8F8F8;
+  border-radius: 5px;
+  border: 2px solid #005C84;
+  border-bottom: 3px solid #005C84;
+  top: 60px;
+  left: 400px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ContextMenu:hover {
+  cursor: default;
+}
+#ContextMenu div {
+  position: absolute;
+  top: 30px;
+  width: 95%;
+  height: 83%;
+  border-radius: 4px;
+  background: #F0F0F0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+#ContextMenu div button {
+  position: relative;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 25px;
+  font-family: arial;
+  font-size: 11px;
+  font-weight: bold;
+  color: #656565;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#ContextMenu div button img {
+  position: relative;
+  width: 15px;
+  margin-right: 5px;
+}
+#ContextMenu div button:hover {
+  cursor: pointer;
+  background: #E7E7E7;
+}
+
+#ContextMenu.active {
+  display: flex;
+}
+
+#ContextLabel {
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  font-family: arial;
+  font-size: 13px;
+  font-weight: bold;
+  color: #006EA8;
+}
+
+#InfoBox {
+  position: absolute;
+  left: 0px;
+  bottom: -20px;
+  width: 100%;
+  height: 20px;
+  background: #0081C5;
+}
+#InfoBox.InfoBoxAnimation {
+  animation: infoboxanim 0.2s linear both;
+}
+
+@keyframes infoboxanim {
+  to {
+    bottom: 0px;
+  }
+}
+#InfoBoxShow {
+  position: absolute;
+  right: 10px;
+  top: -23px;
+  width: 20px;
+  height: 23px;
+  background: white;
+  outline: none;
+  border: none;
+  border-radius: 30px 30px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#InfoBoxShow img {
+  position: absolute;
+  width: 11px;
+  top: 5px;
+  padding: 3px;
+  transition: 0.4s all;
+}
+#InfoBoxShow img.active {
+  transform: rotate(180deg);
+}
+#InfoBoxShow:hover {
+  background: #f2f2f2;
+  cursor: pointer;
+}
+
+#SideMenu {
+  position: absolute;
+  left: -220px;
+  width: 220px;
+  height: 100%;
+  background: #0086D1;
+  z-index: 100;
+  transition: all 0.5s ease;
+}
+#SideMenu::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background: #007EC5;
+  left: 0px;
+  top: 0px;
+}
+#SideMenu:hover {
+  cursor: default;
+}
+
+#ViewBlock {
+  position: absolute;
+  left: 220px;
+  top: 0px;
+  width: 1000px;
+  height: 100%;
+  background: black;
+  z-index: 3000;
+  opacity: 20%;
+  transition: all 0.5s ease;
+  display: none;
+}
+
+#ArrowRightMenu {
+  position: absolute;
+  top: 20px;
+  left: 5px;
+  width: 7px;
+  z-index: 7;
+}
+#ArrowRightMenu:hover {
+  cursor: pointer;
+}
+
+#LogoWhite {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  width: 90px;
+  z-index: 7;
+}
+
+.MenuLabel {
+  position: absolute;
+  top: 70px;
+  left: 10px;
+  color: white;
+  font-family: arial;
+  font-size: 15px;
+  z-index: 7;
+}
+
+#AppVersion {
+  position: absolute;
+  right: 15px;
+  top: 23px;
+  color: white;
+  font-family: arial;
+  font-size: 11px;
+  font-weight: initial;
+  z-index: 7;
+}
+
+#MenuButtonBox {
+  position: absolute;
+  left: 0px;
+  top: 100px;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+#MenuButtonBox button {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: arial;
+  font-size: 13px;
+  font-weight: inherit;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: none;
+}
+#MenuButtonBox button:hover {
+  background: white;
+  color: #0086D1;
+  cursor: pointer;
+}
+#MenuButtonBox button img {
+  position: relative;
+  width: 20px;
+  margin-right: 3px;
+  background: #0086D1;
+  padding: 3px;
+}
+
+#Copyright {
+  position: absolute;
+  left: 15px;
+  bottom: 20px;
+  font-family: arial;
+  font-size: 8px;
+  font-weight: initial;
+  color: white;
+  text-align: left;
+}
+
+#SocialMediaBox {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  left: 10px;
+  bottom: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+#SocialMediaBox img {
+  position: relative;
+  width: 20px;
+  margin-left: 7px;
+  cursor: pointer;
+}
+
+#SideMenuContext {
+  position: absolute;
+  left: 220px;
+  top: 0px;
+  width: 750px;
+  height: 100%;
+  background: white;
+  z-index: 3010;
+  display: none;
+}
+
+#MenuContextBar {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 45px;
+  background: #0086D1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+
+#MenuIcon {
+  position: absolute;
+  left: 10px;
+  width: 20px;
+}
+
+.DotappSpec {
+  position: absolute;
+  left: 40px;
+  top: 6px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: arial;
+}
+
+#AppConfigContext {
+  position: absolute;
+  left: 40px;
+  top: 24px;
+  color: white;
+  font-size: 11px;
+  font-weight: initial;
+  font-family: arial;
+}
+
+/*# sourceMappingURL=main.screen.design.css.map */

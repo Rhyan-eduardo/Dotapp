@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.SplashCover {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+}
+
+.LoadBox {
+  position: absolute;
+  right: 20px;
+  top: 200px;
+  width: 120px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.144);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.LoadBar {
+  position: absolute;
+  width: 40px;
+  left: -40px;
+  height: 4px;
+  background: white;
+  animation: LoadAnimation 1s linear infinite;
+}
+.LoadBar:hover {
+  background: greenyellow;
+}
+
+@keyframes LoadAnimation {
+  to {
+    left: 120px;
+  }
+}
+#LoadContext {
+  position: absolute;
+  top: 210px;
+  right: 42px;
+  font-family: arial;
+  font-weight: initial;
+  font-size: 10px;
+  color: white;
+}
+
+/*# sourceMappingURL=launch.screen.design.css.map */
